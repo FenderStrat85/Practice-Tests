@@ -32,24 +32,27 @@ const addNumbers = function (a=0, b=0) {
     }
 }
 
-let destinations = ['Japan', 'China', 'Georgia', 'Taiwan', 'Uzbekistan'];
-const holiday = function () {
-
-    // let destinations = ['Japan', 'China', 'Georgia', 'Taiwan', 'Uzbekistan'];
-    let select = destinations[Math.floor(Math.random() * (destinations.length))];
-    console.log(select)
-    // console.log(destinations);
+const holiday = function (input) {
+    let select = input[Math.floor(Math.random() * (input.length))];
     return select;
-
-
 }
 
-holiday()
+const whatsForDinner = function (input) {
+    let filtered = input.filter(item => item.length > 6);
+    let x = Math.floor(Math.random()*filtered.length);
+    return filtered[x];
+}
+
+//if you try to call a function on this page that is using parameters from mocks
+//will come back as undefined as the parameter does not exist. 
+// holiday();
+
 module.exports = {
     sayHello,
     addNumbers, 
     holiday,
-    destinations,
+    //destinations,
+    whatsForDinner,
 };
 // module.exports = sayHello;
 // module.exports = addNumbers;
